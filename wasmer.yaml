@@ -1,0 +1,6 @@
+kind: wasmer.io/App.v0
+name: BuyCryptoCardBot
+owner: vatsapiofficial
+package: sha256:2707c7560e094559a24ae1f3fa4c54f73409fb5081fc94db56653bb686f26dac
+scaling:
+  mode: single_concurrency
