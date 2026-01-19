@@ -34,9 +34,15 @@ function sendMessage($chat_id, $text, $keyboard = null) {
 $update = json_decode(file_get_contents('php://input'), true);
 if (!$update) {
     // Basic landing page if no Telegram update is received
-    echo "<h1>Buy Crypto Card Bot</h1>";
-    echo "<p>Virtual Visa & Mastercard cards. No KYC, 0% transaction fees, high limits. Pay with USDT.</p>";
-    echo "<p><a href='https://t.me/BuyCryptoCardBot'>Open in Telegram</a></p>";
+    echo "<h1>🎉 Welcome to Buy Crypto Card 🚀</h1>";
+    echo "<p>💳 <i>Fast, private & borderless virtual cards</i></p>";
+    echo "<ul>";
+    echo "<li>✅ Visa & Mastercard</li>";
+    echo "<li>🔐 No KYC required</li>";
+    echo "<li>💸 0% transaction fee</li>";
+    echo "<li>🚀 High limits up to $100,000</li>";
+    echo "</ul>";
+    echo "<p><a href='https://t.me/BuyCryptoCardBot' style='padding: 10px 20px; background: #0088cc; color: white; text-decoration: none; border-radius: 5px;'>Open in Telegram</a></p>";
     exit;
 }
 
@@ -71,12 +77,13 @@ if ($text === '/start') {
     updateUser($user_id, ['state' => 'IDLE']);
     sendMessage(
         $chat_id,
-        "🚀 Buy Crypto Card\n\n".
-        "Virtual Visa & Mastercard cards\n".
-        "• No KYC\n".
-        "• 0% transaction fees\n".
-        "• High limits\n\n".
-        "💳 Pay with USDT",
+        "🎉 <b>Welcome to Buy Crypto Card</b> 🚀\n\n".
+        "💳 <i>Fast, private & borderless virtual cards</i>\n\n".
+        "✅ Visa & Mastercard\n".
+        "🔐 No KYC required\n".
+        "💸 0% transaction fee\n".
+        "🚀 High limits up to $100,000\n\n".
+        "Choose an option below:",
         $menu
     );
     exit;
